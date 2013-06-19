@@ -34,7 +34,7 @@ The templates are based on the logic within the following classes in the ASP.Net
 Note that the MVC4 editors support new HTML5 input elements.
 
 
-New HtmlHelper Extension Methods: EditorSection / EditorSectionFor and DisplaySection / DisplaySectionFor
+New HtmlHelper Extension Methods: EditorSection, EditorSectionFor, DisplaySection and DisplaySectionFor
 ---------------------------------------------------------------------------------------------------------
  
 In addition to the standard Razor templates, some new extension methods have been added to support the display of values with surrounding HTML, labels and validation elements. See DisplayExtensions and EditorExtensions - details to be documented soon.
@@ -42,18 +42,19 @@ In addition to the standard Razor templates, some new extension methods have bee
 
 How to Use
 ----------
-Copy the following directories to the views folder of your ASP.Net MVC web application project:
 
-src\DemoMvcApp\Views\Shared\DisplayTemplates
-src\DemoMvcApp\Views\Shared\EditorTemplates
+Simply copy the following directories to the corresponding Views/Shared folder in your ASP.Net MVC web application:
 
-You'll need to either clone this repository or download the files in the [DisplayTemplates](https://github.com/danmalcolm/mvc-razor-display-and-editor-templates/src/DemoMvcApp/Views/Shared/DisplayTemplates) and [EditorTemplates] (https://github.com/danmalcolm/mvc-razor-display-and-editor-templates/src/DemoMvcApp/Views/Shared/DisplayTemplates) folders.
+- src\DemoMvcApp\Views\Shared\DisplayTemplates
+- src\DemoMvcApp\Views\Shared\EditorTemplates
 
-The framework will now use these templates, instead of rendering edit / display markup using the built-in templates.
+You'll need to either clone this repository or download the files in the [DisplayTemplates](https://github.com/danmalcolm/mvc-razor-display-and-editor-templates/tree/master/src/DemoMvcApp/Views/Shared/DisplayTemplates) and [EditorTemplates] (https://github.com/danmalcolm/mvc-razor-display-and-editor-templates/tree/master/src/DemoMvcApp/Views/Shared/EditorTemplates) folders.
 
-Edit the .cshtml files to change the markup and add functionality. 
+The framework will now use these templates, instead of rendering edit / display markup using the built-in templates. You can then edit the .cshtml files to change the markup and add functionality. 
 
-A NuGet package will be added once I've done a bit more testing.
+If you want to use the EditorSection, EditorSectionFor, DisplaySection and DisplaySectionFor extension methods, copy the files from the [src/DemoMvcApp/Html](https://github.com/danmalcolm/mvc-razor-display-and-editor-templates/tree/master/src/DemoMvcApp/Html) to your project and change the namespace as appropriate.
+
+A NuGet package will be added soon. 
 
 Development
 -----------
@@ -75,3 +76,4 @@ Separate sites:
 - StandardTemplates - just templates, nothing else
 - EditorExtensions - templates + DisplaySection / EditorSection functionality
 - Twitter Bootstrap - example of customising templates to simplify form generation etc
+- Automated test to compare side-by-side default / Razor output 
