@@ -60,7 +60,7 @@ Development
 -----------
 If you want to experiment / play around:
 
-- Clone the repository or [download the solution]() from Github if you're not familiar with git
+- Clone the repository or [download the solution](https://github.com/danmalcolm/mvc-razor-display-and-editor-templates/archive/master.zip) from Github if you're not familiar with git
 - Open the solution in Visual Studio
 - Set DemoMvcApp as your startup project and hit F5.
 
