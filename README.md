@@ -77,3 +77,8 @@ Separate sites:
 - EditorExtensions - templates + DisplaySection / EditorSection functionality
 - Twitter Bootstrap - example of customising templates to simplify form generation etc
 - Automated test to compare side-by-side default / Razor output 
+
+Licence
+-------
+
+This work is ©2013 [Daniel Malcolm](http://www.danmalcolm.com) and contributors under the [BSD license](https://github.com/danmalcolm/mvc-razor-display-and-editor-templates/blob/master/LICENCE.txt)
