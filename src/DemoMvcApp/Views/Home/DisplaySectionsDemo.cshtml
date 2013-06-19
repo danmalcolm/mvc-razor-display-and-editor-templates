@@ -1,0 +1,22 @@
+﻿@using RazorDisplayEditorTemplates.DemoMvcApp.Html
+@model RazorDisplayEditorTemplates.DemoMvcApp.Controllers.SampleModel
+
+<h2>DisplaySection</h2>
+<p>DisplaySection renders surrounding HTML with label</p>
+@Html.DisplaySection("Text")
+
+<h2>DisplaySectionFor</h2>
+<p>DisplaySectionFor works in the same way as DisplaySection</p>
+@Html.DisplaySectionFor(x => x.Text)
+
+<h2>Display / DisplayFor</h2>
+<p>DisplayFor is unchanged and does not render surrounding HTML</p>
+@Html.DisplayFor(x => x.Text)
+
+<h2>Examples</h2>
+<p>Each property of our sample model displayed used DisplaySection</p>
+@foreach (var prop in ViewData.ModelMetadata.Properties)
+{
+    @Html.DisplaySection(prop.PropertyName)
+}
+

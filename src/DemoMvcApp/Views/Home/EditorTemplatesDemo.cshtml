@@ -1,0 +1,57 @@
+﻿
+@model RazorDisplayEditorTemplates.DemoMvcApp.Controllers.SampleModel
+<h1>Editor Templates Demo</h1>
+
+<h2>Editor / EditorFor</h2>
+<p>Editors for all model types are rendered using the templates in Views/Shared/EditorTemplates</p>
+
+<p>String property</p>
+@Html.EditorFor(x => x.Text)
+
+<p>Boolean property</p>
+@Html.EditorFor(x => x.Boolean)
+
+<p>Decimal property</p>
+@Html.EditorFor(x => x.Decimal)
+
+<p>Multiline text - specified by [DataType(DataType.MultilineText)]</p>
+@Html.EditorFor(x => x.MultilineText)
+
+<h3>Date properties</h3>
+<p>Format controlled by the built-in DataType attribute, e.g. [DataType(DataType.DateTime)].</p>
+<p>HTML5 elements are used (note browser support, however you're now able to jump into the Razor templates and add markup to support datepicker controls)</p>
+
+<p>Date and time:</p>
+@Html.EditorFor(x => x.DateTime)
+
+<p>Date:</p>
+@Html.EditorFor(x => x.Date)
+
+<p>Time:</p>
+@Html.EditorFor(x => x.Time)
+
+<h2>Other Examples</h2>
+<p>Each property of our sample model displayed using Html.Editor</p>
+<table>
+    <thead>
+        <tr>
+            <th>Property name</th>
+            <th>Type</th>
+            <th>Result of Html.Editor</th>
+        </tr>
+    </thead>
+    
+    @foreach (var prop in ViewData.ModelMetadata.Properties)
+    {
+        <tr>
+            <td>@Model.GetType().Name<text>.</text>@prop.PropertyName</td>
+            <td>@prop.ModelType.Name</td>
+            <td>@Html.Editor(prop.PropertyName)</td>
+        </tr>
+    }
+</table>
+
+<h2>Editor for Complex Objects</h2>
+<p>The standard functionality has been replicated in the Razor templates, with each property shown with labels and validation messages</p>
+@Html.EditorForModel()
+

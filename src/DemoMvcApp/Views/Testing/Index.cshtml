@@ -1,0 +1,65 @@
+﻿@using RazorDisplayEditorTemplates.DemoMvcApp.Controllers.Testing
+@model RazorDisplayEditorTemplates.DemoMvcApp.Controllers.SampleModel
+<h1>Testing</h1>
+<p>
+Razor templates and built-in templates rendered side-by-side.
+</p>
+<h2>Display Templates</h2>
+<table id="display">
+    <thead>
+        <tr>
+            <th>Property name</th>
+            <th>Type</th>
+            <th>Razor</th>
+            <th>Built-in</th>
+        </tr>
+    </thead>
+    
+    @foreach (var prop in ViewData.ModelMetadata.Properties)
+    {
+        <tr>
+            <td>@Model.GetType().Name<text>.</text>@prop.PropertyName</td>
+            <td>@prop.ModelType.Name</td>
+            <td>@Html.Display(prop.PropertyName)</td>
+            <td>
+                @{
+                    TemplateTestHelper.ClearCachedViewsAndRemoveViewEngines();
+                }
+                @Html.Display(prop.PropertyName)
+                @{
+                    TemplateTestHelper.RestoreViewEngines();
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+<h2>Editor Templates</h2>
+<table id="editor">
+    <thead>
+        <tr>
+            <th>Property name</th>
+            <th>Type</th>
+            <th>Razor</th>
+            <th>Built-in</th>
+        </tr>
+    </thead>
+    
+    @foreach (var prop in ViewData.ModelMetadata.Properties)
+    {
+        <tr>
+            <td>@Model.GetType().Name<text>.</text>@prop.PropertyName</td>
+            <td>@prop.ModelType.Name</td>
+            <td>@Html.Editor(prop.PropertyName)</td>
+            <td>
+                @{
+                    TemplateTestHelper.ClearCachedViewsAndRemoveViewEngines();
+                }
+                @Html.Editor(prop.PropertyName)
+                @{
+                    TemplateTestHelper.RestoreViewEngines();
+                }
+            </td>
+        </tr>
+    }
+</table>

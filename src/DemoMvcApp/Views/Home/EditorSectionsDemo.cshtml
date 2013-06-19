@@ -1,0 +1,22 @@
+﻿@using RazorDisplayEditorTemplates.DemoMvcApp.Html
+@model RazorDisplayEditorTemplates.DemoMvcApp.Controllers.SampleModel
+
+<h1>Editor Extensions</h1>
+<h2>EditorSectionFor</h2>
+<p>Using EditorSectionFor renders surrounding HTML with label and validation messages</p>
+@Html.EditorSectionFor(x => x.Text)
+
+<h2>EditorSection</h2>
+<p>EditorSection works in the same way as EditorSectionFor</p>
+@Html.EditorSection("Text")
+
+<h2>Editor / EditorFor</h2>
+<p>EditorFor is unchanged and does not render surrounding HTML</p>
+@Html.EditorFor(x => x.Text)
+
+<h2>Examples</h2>
+<p>Each property of our sample model displayed using EditorSection</p>
+@foreach (var prop in ViewData.ModelMetadata.Properties)
+{
+    @Html.EditorSection(prop.PropertyName)
+}

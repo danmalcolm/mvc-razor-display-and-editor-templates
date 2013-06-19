@@ -1,0 +1,55 @@
+﻿
+@model RazorDisplayEditorTemplates.DemoMvcApp.Controllers.SampleModel
+<h1>Display Templates Demo</h1>
+
+<h2>Display / DisplayFor</h2>
+<p>Display elements for all model types are rendered using the templates in Views/Shared/DisplayTemplates</p>
+
+<h3>String properties</h3>
+@Html.DisplayFor(x => x.Text)
+
+<h3>Boolean properties</h3>
+<p>The default template uses a disabled checkbox:</p>
+@Html.DisplayFor(x => x.Boolean)
+<p>Developers are now free to edit Views/Shared/DisplayTemplates/Boolean.cshtml to use alternative graphics or labels.</p>
+
+<h3>Numeric properties</h3>
+<p>Decimal: @Html.DisplayFor(x => x.Decimal), Int: @Html.DisplayFor(x => x.Int), Long: @Html.DisplayFor(x => x.Long)</p>
+
+<h3>Date properties</h3>
+<p>Format controlled by the built-in DataType attribute, e.g. [DataType(DataType.DateTime)]. Again, the behaviour is just like the built-in ASP.Net MVC templates.</p>
+
+<p>Date and time:</p>
+@Html.DisplayFor(x => x.DateTime)
+
+<p>Date:</p>
+@Html.DisplayFor(x => x.Date)
+
+<p>Time:</p>
+@Html.DisplayFor(x => x.Time)
+
+<h2>Other Examples</h2>
+<p>Each property of our sample model displayed using Html.Display</p>
+<table>
+    <thead>
+        <tr>
+            <th>Property name</th>
+            <th>Type</th>
+            <th>Result of Html.Display</th>
+        </tr>
+    </thead>
+    
+    @foreach (var prop in ViewData.ModelMetadata.Properties)
+    {
+        <tr>
+            <td>@Model.GetType().Name<text>.</text>@prop.PropertyName</td>
+            <td>@prop.ModelType.Name</td>
+            <td>@Html.Display(prop.PropertyName)</td>
+        </tr>
+    }
+</table>
+
+<h2>Displaying Complex Objects</h2>
+<p>The standard functionality has been replicated in the Razor templates, with each property shown with labels and display element</p>
+@Html.DisplayForModel()
+

@@ -1,0 +1,9 @@
+﻿@{ Layout = "~/Views/Shared/DisplayTemplates/_Layout.cshtml"; }
+@if (Model == null || string.IsNullOrWhiteSpace(Model.ToString()))
+{
+    @ViewData.TemplateInfo.FormattedModelValue
+}
+else
+{
+    <a href="@Html.AttributeEncode(ViewData.Model)">@ViewData.TemplateInfo.FormattedModelValue</a>    
+}
