@@ -28,13 +28,15 @@ namespace RazorDisplayEditorTemplates.DemoMvcApp.Html
         /// ~/Views/Shared/DisplayTemplates/DisplaySection.cshtml for further background.
         /// </summary>
         /// <param name="viewData"></param>
-        /// <param name="model"></param>
-        public static void RemoveModelFromVisitedObjects(ViewDataDictionary viewData, object model)
+        public static void RemoveModelFromVisitedObjects(ViewDataDictionary viewData)
         {
             var visitedObjects = VisitedObjectsProperty.GetValue(viewData.TemplateInfo) as HashSet<object>;
+            var model = viewData.Model;
             if (visitedObjects != null)
             {
-                visitedObjects.Remove(model);
+                // Remove model if present - if model is null, the type is stored
+                visitedObjects.Remove(model ?? viewData.ModelMetadata.ModelType);
+                visitedObjects.Clear();
             }
         }
     }

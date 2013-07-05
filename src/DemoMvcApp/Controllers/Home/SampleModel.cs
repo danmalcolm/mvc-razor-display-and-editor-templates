@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers
+namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers.Home
 {
     public class SampleModel
     {
@@ -27,6 +27,8 @@ namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers
                 NullableBoolean = null,
                 Password = "supersecret",
                 String = "A simple string",
+                EmptyString = "",
+                NullString = null,
                 Text = "Some text",
                 Url = "http://www.microsoft.com/",
                 NullUrl = null,
@@ -77,6 +79,10 @@ namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers
         public string Password { get; set; }
 
         public string String { get; set; }
+
+        public string EmptyString { get; set; }
+
+        public string NullString { get; set; }
 
         [DataType(DataType.Text)]
         public string Text { get; set; }

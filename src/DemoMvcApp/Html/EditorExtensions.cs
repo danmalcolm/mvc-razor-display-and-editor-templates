@@ -110,14 +110,14 @@ namespace RazorDisplayEditorTemplates.DemoMvcApp.Html
         /// </summary>
         public static MvcHtmlString EditorSectionFor<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, string templateName, string htmlFieldName, object additionalViewData)
         {
-            var editorParams = new TemplateParams
+            var templateParams = new TemplateParams
             {
                 TemplateName = templateName,
                 AdditionalViewData = additionalViewData,
                 HtmlFieldName = htmlFieldName
             };
             // additionalViewData used to pass on parameters to EditorSection
-            return html.EditorFor(expression, "EditorSection", new { EditorParams = editorParams });
+            return html.EditorFor(expression, "EditorSection", new { TemplateParams = templateParams });
         }
 
     }
