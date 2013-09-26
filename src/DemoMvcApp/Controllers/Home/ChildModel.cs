@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers
+namespace DemoMvcApp.Controllers.Home
 {
     [DisplayColumn("FullName")]
     public class ChildModel {

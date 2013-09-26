@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
-using RazorDisplayEditorTemplates.DemoMvcApp.Controllers.Home;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers
+namespace DemoMvcApp.Controllers.Home
 {
     public class HomeController : Controller
     {

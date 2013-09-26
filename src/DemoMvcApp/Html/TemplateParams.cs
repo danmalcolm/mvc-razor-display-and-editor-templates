@@ -1,4 +1,4 @@
-﻿namespace RazorDisplayEditorTemplates.DemoMvcApp.Html
+﻿namespace DemoMvcApp.Html
 {
     /// <summary>
     /// Holds parameters that should be supplied in nested calls to Html.Editor and Html.Display 

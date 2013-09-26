@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")"/>
 </head>
     <body>
         <header>
@@ -19,8 +19,5 @@
             </ul>
         </header>
         @RenderBody()
-
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
     </body>
 </html>

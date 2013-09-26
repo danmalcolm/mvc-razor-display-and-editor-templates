@@ -5,13 +5,12 @@ using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers.Testing
+namespace DemoMvcApp.Controllers.Testing
 {
     public class TemplateTestHelper
     {
         private static readonly Lazy<string> CacheItemId = new Lazy<string>(GetCacheItemId);
-        private static bool ViewEnginesRemoved = false;
-
+        
         private static string GetCacheItemId()
         {
             // Accesses internal field on internal type System.Web.Mvc.Html.TemplateHelpers
@@ -26,6 +25,8 @@ namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers.Testing
 
         /// <summary>
         /// Prevents our templates from being used by HtmlHelper Display and Editor extension methods
+        /// TestingController displays output from built-in templates side-by-side with custom
+        /// templates.
         /// </summary>
         public static void ClearCachedViewsAndRemoveViewEngines()
         {

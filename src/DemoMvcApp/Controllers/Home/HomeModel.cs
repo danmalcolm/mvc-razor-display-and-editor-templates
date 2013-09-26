@@ -1,4 +1,4 @@
-﻿namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers
+﻿namespace DemoMvcApp.Controllers.Home
 {
     public class HomeModel
     {

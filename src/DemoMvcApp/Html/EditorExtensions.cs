@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Html
+namespace DemoMvcApp.Html
 {
     /// <summary>
     /// Contains extension methods for displaying editor elements together with surrounding HTML, labels and validation messages

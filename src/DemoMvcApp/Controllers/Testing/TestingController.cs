@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using RazorDisplayEditorTemplates.DemoMvcApp.Controllers.Home;
+using DemoMvcApp.Controllers.Home;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers.Testing
+namespace DemoMvcApp.Controllers.Testing
 {
     public class TestingController : Controller
     {

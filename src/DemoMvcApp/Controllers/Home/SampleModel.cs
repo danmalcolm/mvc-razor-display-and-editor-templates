@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Controllers.Home
+namespace DemoMvcApp.Controllers.Home
 {
     public class SampleModel
     {

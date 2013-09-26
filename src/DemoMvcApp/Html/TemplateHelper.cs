@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Mvc;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Html
+namespace DemoMvcApp.Html
 {
     public class TemplateHelper
     {

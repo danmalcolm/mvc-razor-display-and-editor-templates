@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
-namespace RazorDisplayEditorTemplates.DemoMvcApp.Html
+namespace DemoMvcApp.Html
 {
     public static class DisplayExtensions
     {
